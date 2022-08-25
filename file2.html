@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <style>
+        #slide, #panel{
+            padding: 10px;
+            background-color: aliceblue;
+            text-align: center;
+            border: 1px yellowgreen solid;
+
+        }
+        #panel{
+            display: none;
+            padding: 10px;
+        }
+
+        #slidetoggle, #paneltoggle{
+            padding: 10px;
+            background-color: #e5eecc;
+            text-align: center;
+            border: 1px yellowgreen solid;
+
+        }
+        #paneltoggle{
+            display: none;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        
+        $(document).ready(function(){
+            // simple program to change color
+            $("#id-name").css("color","red"); 
+
+            // change color via function and btn
+            $("#btn").click(
+                function(){
+                    $("#heading").css("background-color","yellow");
+                }
+            )
+
+            // simple program to give border on list
+            $("#list").css("border","2px red solid");
+
+            // simple program to give border on list elemnts inside list
+            $("#list1,.1").css("border","2px blue solid");
+
+            // add item on click in list appending in last
+            $("#btn1").click(
+                function(){
+                    $("#list").append("<li> one item appended in list </li>")
+                }
+            )
+
+            // add item on click in div using jquery
+            $("#btn2").click(
+                function(){
+                    $("#data").append(" <h3> one item appended in div </h3>")
+                }
+            )
+
+            // add item on click in list prepending in first
+            $("#btn1").click(
+                function(){
+                    $("#list").prepend("<li> one item prepended in list </li>")
+                }
+            )
+
+            // add item on click in div using jquery
+            $("#btn2").click(
+                function(){
+                    $("#data").prepend("<h3> one item prepended in div </h3>")
+                }
+            )
+
+            // show item on click 
+            $("#btn3").click(
+                function(){
+                    $("#item").show(1000)
+                }
+            )
+
+            // hide item on click 
+            $("#btn4").click(
+                function(){
+                    $("#item").hide(500);
+                }
+            )
+
+            // animation slide up
+            $("#slide").click(
+                function(){
+                    $("#panel").slideUp("slow");
+                }
+            )
+            
+            // animation slide down
+            $("#slide").click(
+                function(){
+                    $("#panel").slideDown("slow");
+                }
+            )
+
+             // animation slide toggle
+             $("#slidetoggle").click(
+                function(){
+                    $("#paneltoggle").slideToggle("slow");
+                }
+            )
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <h3 id="id-name"> jquery </h3>
+
+    <h3 id="heading">chitkara</h3>
+    <button type="button" id="btn"> change color </button>
+
+    <ul id="list">
+        <li> h1 </li>
+        <li> h2 </li>
+        <li> h3 </li>
+        <li> h4 </li>
+        <li> h5 </li>
+        <li> h6 </li>
+    </ul>
+
+    <ul id="list1">
+        <li class="1"> h1 </li>
+        <li> h2 </li>
+        <li class="1"> h3 </li>
+        <li> h4 </li>
+        <li class="1"> h5 </li>
+        <li> h6 </li>
+    </ul>
+
+    <div id="data"> </div>
+    <button type="button" id="btn1"> add item in list </button>
+    <button type="button" id="btn2"> add heading </button>
+    <br> <br>
+    <div id="item"> Show/Hide data </div>
+    <button type="button" id="btn3"> show </button>
+    <button type="button" id="btn4"> hide </button>
+    <br> <br>
+    <div id="slide">Click to slide up/ Slide down</div>
+    <div id="panel">sliding up & down</div>
+
+    <br> <br>
+    <div id="slidetoggle">Click to slide up/ Slide down using toggle</div>
+    <div id="paneltoggle">sliding up & down</div>
+
+</body>
+</html>
